@@ -1,2 +1,3 @@
 # Hotel-reservation-web-app
-Projekat iz predmeta Web Programiranje
+subject Web programming, project in progress
+AngularJS, Flask Python
