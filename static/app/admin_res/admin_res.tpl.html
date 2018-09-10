@@ -1,0 +1,62 @@
+<div>
+    
+    <div class="panel panel-default" ng-hide="actrl.reservations==0">
+        <div class="panel-heading">
+            <h1>{{actrl.message}}</h1>
+        </div>
+        <div class="panel-body" style="height:300px; overflow:auto;">
+          <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Reservation id</th>
+                  <th>Room number</th>
+                  <th>Arrival</th>
+                  <th>Departure</th>
+                  <th>Number of guests</th>
+                  <th>Reservation status</th>
+                  <th>Bill</th>
+                  <th>Guest</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="res in actrl.reservations">
+                  <td>{{res.id}}</td>
+                  <td>{{res.room_id}}</td>
+                  <td>{{res.arrival | date: "MMMM/dd/yyyy"}}</td>
+                  <td>{{res.departure}}</td>
+                  <td>{{res.num_of_guests}}</td>
+                  <td>{{res.status}}</td>
+                  <td><button type="button" data-toggle="modal" data-target="#billModal" class="btn btn-default btn-xs fa fa-money" aria-hidden="true"
+                    ng-click="actrl.viewBill(res.id)">
+                  </button></td>
+                  <td><button type="button" class="btn btn-default btn-xs fa fa-user" aria-hidden="true"
+                    ng-click="actrl.viewGuest(res.id)">
+                  </button></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+      <div class="modal fade" id="billModal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Bill</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Bill#: {{actrl.bill.id}}</p> 
+                <p>Date: {{actrl.bill.date}}</p> 
+                <p>Number of nights: {{actrl.bill.quantity}}</p> 
+                <p>Room price per night: {{actrl.bill.item_price}} $</p> 
+                <p>Total: {{(+actrl.bill.item_price) * (+actrl.bill.quantity)}} $</p> 
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>

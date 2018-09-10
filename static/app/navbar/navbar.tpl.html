@@ -1,0 +1,28 @@
+<div class="navbar navbar-fixed-top">
+    <ul>
+        <li ui-sref-active="active">
+            <a ui-sref="home" ng-hide = "nbctrl.authorized">Home</a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="amenities" ng-hide = "nbctrl.authorized">Amenities</a>
+        </li>        
+        <li ui-sref-active="active">
+            <a ui-sref="membership">Membership</a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="reservations" ng-show="nbctrl.loggedIn && !nbctrl.authorized">My Reservations</a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="admin_res" ng-show="nbctrl.loggedIn && nbctrl.authorized">Reservations</a>
+        </li>
+        <li ui-sref-active="active" ng-show="nbctrl.loggedIn && nbctrl.authorized">
+            <a ui-sref="guests" >Guests</a>
+        </li>
+        <li ui-sref-active="active" ng-hide="nbctrl.loggedIn">
+            <a ui-sref="login" >Log in</a>
+        </li>
+        <li ui-sref-active="active" ng-show="nbctrl.loggedIn">
+            <a href="" ng-click="nbctrl.logout()">Log out</a>
+        </li>
+    </ul>
+</div>

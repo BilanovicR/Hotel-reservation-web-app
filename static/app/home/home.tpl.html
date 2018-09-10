@@ -1,0 +1,44 @@
+  <div class="container row home">
+
+        <div class="intro col-sm-8">
+            <h1>About our hotel</h1>
+            <p style="text-align:justify">Lorem ipsum dolor sit amet, te ipsum splendide mei, vis ei option vivendo. Solum omnesque eu duo, possim convenire
+                ut sit. Ea tantas delenit sea. Id suscipit mandamus mel, qui aperiam iuvaret rationibus at. Justo hendrerit
+                pro ex, sed debet urbanitas id, has ne nostro conceptam. Petentium maluisset dissentiunt ius cu. Pro at decore
+                viderer persecuti. Ea qui bonorum officiis, no ius oblique vocibus intellegat. Omnis mucius mea ne, alii
+                verterem te vix. At facete ponderum concludaturque eam, eu his iisque tractatos omittantur, dignissim concludaturque
+                per at. Sed prima facilis fuisset et, vel an homero appareat ponderum. Cu est partem scripserit, id cum justo
+                consectetuer. Duo ne facer graece, te eum malis postea accusamus.</p>
+        </div>
+        <div  ng-hide="homectrl.authorized" class="reservation-bar col-md-4">
+            <h2>Check availability</h2>
+            <form class="form-group" name = "reservationForm" >
+                <label class="control-label requiredField" for="date">
+                    Arrival date
+                </label>
+                <div class="input-group mb-3 ">
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar-check-o"> </i>
+                    </span>
+                    <input type="date" name="arrival" class="form-control" ng-model="homectrl.reservation.arrival" id="arrivalId" required>
+                </div>
+                <label class="control-label requiredField" for="date">
+                        Departure date
+                    </label>
+                    <div class="input-group mb-3 ">
+                        <span class="input-group-addon">
+                            <i class="fa fa-calendar-check-o"></i>
+                        </span>
+                        <input type="date" name="departure" class="form-control" ng-model="homectrl.reservation.departure" id="departureId" required>
+                    </div>
+                <div class="input-group mb-3 ">
+                    <span class="input-group-addon">Number of adults</span>
+                    <input type="number" name="guests" class="form-control col-xs-2" placeholder="1" min="1" max="5" aria-describedby="basic-addon1" ng-model="homectrl.reservation.num_of_guests" required>
+                </div>              
+                <button class="btn btn-primary" type="button" ng-disabled="reservationForm.arrival.$invalid || reservationForm.departure.$invalid || reservationForm.guests.$invalid" ng-click="homectrl.checkAvailability()">Check</button>
+                <p>{{homectrl.message}}</p>
+                <!--<button class="btn btn-primary" type="button" ng-show="homectrl.loggedIn" ng-disabled="reservationForm.arrival.$invalid || reservationForm.departure.$invalid || reservationForm.guests.$invalid" ng-click="homectrl.makeReservation()">Make a reservation</button>-->
+            </form>
+        </div>
+
+    </div>

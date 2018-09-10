@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Hotel</title>
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="background" ng-app="HotelApp">
+
+    <ui-view name="login"></ui-view>
+    <ui-view name="navbar"></ui-view>
+
+
+    <div class="container">
+        <ui-view></ui-view>
+    </div>
+
+    <footer>
+        <div class="contact">
+            <i class="fa fa-phone"> 012-345-678</i>
+            <i class="fa fa-at"> email@email.com</i>
+            <i class="fa fa-map-marker"> Something Street 123 Novi Sad</i>
+        </div>
+        <div class="social">
+            <a href="#">
+                <i class="fa fa-tripadvisor"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-linkedin-square"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-twitter-square"></i>
+            </a>
+        </div>
+        <i>2018 Bilanovic Ruzica</i>
+    </footer>
+
+
+    <script src="js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.js/popper.min.js"></script>
+    <script src="js/moment.js/moment.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    
+    <script src="js/angularjs/angular.min.js"></script>
+    <script src="js/angularjs-ui-router/angular-ui-router.min.js"></script>
+    <script src="js/ui-bootstrap/ui-bootstrap-2.4.0.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/services/loginService.js"></script> 
+    <script src="app/navbar/navbar.js"></script>
+       
+    <script src="app/home/home.js"></script>
+    <script src="app/login/login.js"></script>
+    <script src="app/membership/membership.js"></script>
+        
+    <script src="app/reservations/reservations.js"></script>
+    <script src="app/guests/guests.js"></script>
+    <script src ="app/admin_res/admin_res.js"> </script>
+    
+</body>
+
+</html>

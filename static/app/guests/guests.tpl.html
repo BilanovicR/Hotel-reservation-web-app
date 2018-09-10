@@ -1,0 +1,36 @@
+<div>
+    
+    <div class="panel panel-default" ng-hide="gctrl.guests==0">
+        <div class="panel-heading">
+            <h1>{{gctrl.message}}</h1>
+        </div>
+        <div class="panel-body" style="height:300px; overflow:auto;">
+          <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Guest id</th>
+                  <th>First name</th>
+                  <th>Last name</th>
+                  <th>Date of birth</th>
+                  <th>Gender</th>
+                  <th>Email</th>
+                  <th>Reservations</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="guest in gctrl.guests">
+                  <td>{{guest.id}}</td>
+                  <td>{{guest.first_name}}</td>
+                  <td>{{guest.last_name}}</td>
+                  <td>{{guest.date_of_birth}}</td>
+                  <td>{{guest.gender}}</td>
+                  <td>{{guest.email}}</td>
+                  <td ><button type="button" class="btn btn-default btn-xs fa fa-table" aria-hidden="true"
+                        ng-click="gctrl.viewReservations(guest.id)">
+                      </button></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+</div>
